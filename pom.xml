@@ -10,5 +10,6 @@
   <modules>
     <module>object-example</module>
     <module>method-example</module>
+      <module>constructor-example</module>
   </modules>
 </project>
