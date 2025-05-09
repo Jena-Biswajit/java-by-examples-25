@@ -20,22 +20,31 @@
 
 ## 3. Constructors
 1. Why Constructors. Default Constructor
-2. Parameterized Constructor. The this keyword
+2. Parameterized Constructor. The this keyword.
 3. this() constructor
 4. this() param constructor
 5. Does calling this() constructor create a new object
 6. Constructor calling constructor
+7. Properties of constructor
+8. Constructor overloading
 
 ## 4. Interfaces
 1. Define interface and its contracts(methods)
 2. Define implementation class for interface
 3. Define multiple implementation for interface
 4. Conditionally choose one of the implementation
-5. Interface extending other interfaces
+5. Interface extending other interfaces *
 6. Marker interfaces: Cloneable, Serializable, RandomAccess
-7. Class implementing multiple interfaces
+7. Class implementing multiple interfaces *
+8. Strategy design pattern *
 
 ## 5. Abstract Classes
+1. Why do we need abstract classes. Define abstract class. Empty abstract class. All Concrete abstract class. Partial concrete abstract class
+2. Keep Common logic in abstract class. Allow subclass(s) to implement abstract methods.
+3. Non-Static variable and constructor in abstract class. Abstract class object creation not allowed.
+4. Understanding this object in abstract class.
+5. Abstract class implementing interface.
+6. Template method design pattern.
 
 ## 6. Inheritance
 
