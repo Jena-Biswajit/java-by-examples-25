@@ -12,5 +12,6 @@
         <module>method-example</module>
         <module>constructor-example</module>
         <module>interfaces-example</module>
+        <module>abstract-classes</module>
     </modules>
 </project>
