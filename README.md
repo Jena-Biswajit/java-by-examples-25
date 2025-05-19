@@ -47,12 +47,56 @@
 6. Template method design pattern.
 
 ## 6. Inheritance
+1. Reuse parent members in child class.
+2. Calling parent class constructor using super constructor
+3. Accessing parent class member from child using super. Can we access private members?
+4. Does creating child class object create parent class object.
+5. Method overriding.
+6. Can variables overridden.
 
 ## 7. Exception Handling
+1. Understanding exception hierarchy.
+2. Checked Exception and Unchecked Exception. Java provided exception classes
+3. What is Error. Java provided error types.
+4. Writing custom exception classes.
+5. Understanding exception stacktrace.
 
 ## 8. Arrays
+1. Primitive type 1d array, 2d array, 3d array. And display them.
+2. Complex type 1d array, 2d array, 3d array, And display them with toString()
+3. Iteration of 1d array using for loop, for index loop. while loop, do while loop
+4. Accessing 1d array and 2d array elements by index or position.
+5. binary search, fnd max, fid min, segregate even and odd numbers
 
 ## 9. Collections
+1. ArrayList: 
+  - add, addAll, get by index, remove, removeAll, retainAll
+  - clone arraylist
+  - sort elements using comparable or comparator
+  - using complex types with arraylist
+  - iterator, list iterator, loops
+
+2. LinkedList
+  - add, addFirst, addLast, remove, removeFirst, removeLast
+  - iterator, list iterator, loops
+
+3. Stack
+  - push, peek, pop, isEmpty
+
+4. Queue
+  - add, offer, peek, poll, isEmpty
+  - iterator, list iterator, loops
+
+5. HashSet
+6. LinkedHashSet
+7. TreeSet
+8. HashMap
+9. LinkedHashMap
+10. TreeMap
+11. HashTable
+12. Concurrent Collections
+13. Synchronized collections
+14. Read only collections(Unmodifiable)
 
 ## 10. MultiThreading
 
