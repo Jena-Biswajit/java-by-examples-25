@@ -69,36 +69,129 @@
 5. binary search, fnd max, fid min, segregate even and odd numbers
 
 ## 9. Collections
-1. ArrayList: 
-  - add, addAll, get by index, remove, removeAll, retainAll
-  - clone arraylist
-  - sort elements using comparable or comparator
-  - using complex types with arraylist
-  - iterator, list iterator, loops
 
-2. LinkedList
-  - add, addFirst, addLast, remove, removeFirst, removeLast
-  - iterator, list iterator, loops
+### **1. `ArrayList`**
 
-3. Stack
-  - push, peek, pop, isEmpty
+* **Basic Operations:** `add()`, `addAll()`, `get(index)`, `remove()`, `removeAll()`, `retainAll()`
+* **Cloning:** Using `clone()` or copy constructor
+* **Sorting:** Using `Comparable` or `Comparator`
+* **Utility Methods:** `size()`, `clear()`
+* **Working with Complex Types:** Storing and manipulating custom objects
+* **Traversal Techniques:** `Iterator`, `ListIterator`, enhanced for-loop, traditional for-loop
 
-4. Queue
-  - add, offer, peek, poll, isEmpty
-  - iterator, list iterator, loops
+---
 
-5. HashSet
-6. LinkedHashSet
-7. TreeSet
-8. HashMap
-9. LinkedHashMap
-10. TreeMap
-11. HashTable
-12. Concurrent Collections
-13. Synchronized collections
-14. Read only collections(Unmodifiable)
+### **2. `LinkedList`**
 
-## 10. MultiThreading
+* **Basic Operations:** `add()`, `addFirst()`, `addLast()`, `remove()`, `removeFirst()`, `removeLast()`
+* **Utility Methods:** `size()`, `clear()`
+* **Traversal Techniques:** `Iterator`, `ListIterator`, enhanced for-loop, traditional for-loop
+
+---
+
+### **3. `Stack`**
+
+* **Core Methods:** `push()`, `peek()`, `pop()`, `isEmpty()`
+* **Utility Methods:** `size()`, `clear()`
+
+---
+
+### **4. `Queue` (e.g., `LinkedList`, `PriorityQueue`)**
+
+* **Core Methods:** `add()`, `offer()`, `peek()`, `poll()`, `isEmpty()`
+* **Utility Methods:** `size()`, `clear()`
+* **Traversal Techniques:** `Iterator`, `ListIterator`, loops
+
+---
+
+### **5. `Set` Implementations**
+
+#### - `HashSet`, `LinkedHashSet`, `TreeSet`
+
+* **Core Methods:** `add()`, `contains()`, `remove()`
+* **Traversal Techniques:** `Iterator`, enhanced for-loop
+  *(Note: `ListIterator` is not supported as `Set` does not maintain index-based order)*
+
+---
+
+### **6. `Map` Implementations**
+
+#### - `HashMap`, `LinkedHashMap`, `TreeMap`
+
+* **Core Methods:** `put()`, `get()`, `remove()`, `containsKey()`
+* **Extended Methods:** `putIfAbsent()`, `putAll()`
+* **Utility Methods:** `size()`, `clear()`
+* **Traversal Techniques:** Using `entrySet()`, `keySet()`, `values()` with `Iterator` or loops
+
+---
+
+### **7. `Hashtable` & `Properties`**
+
+* **Thread-safe legacy implementations**
+* Used for key-value storage; `Properties` is often used for config files (supports only `String` keys and values)
+
+---
+
+### **8. Concurrent Collections**
+
+* Examples: `ConcurrentHashMap`, `CopyOnWriteArrayList`, `ConcurrentLinkedQueue`
+* Safe for use in multi-threaded environments
+
+---
+
+### **9. Synchronized Collections**
+
+* Wrappers using `Collections.synchronizedList()`, `synchronizedSet()`, etc.
+
+---
+
+### **10. Read-Only Collections**
+
+* Unmodifiable collections using `Collections.unmodifiableList()`, `unmodifiableSet()`, etc.
+
+---
+
+### **11. Cloning Collections**
+
+* Using `clone()` or parameterized constructor for deep/shallow copy
+
+---
+
+### **12. Comparison of Collection Types**
+
+* **`ArrayList` vs `LinkedList` vs `Stack` vs `Queue`:**
+  Performance differences, use-cases, and data access patterns
+
+* **`HashSet` vs `LinkedHashSet` vs `TreeSet`:**
+  Ordering, performance, and null value handling
+
+* **`HashMap` vs `LinkedHashMap` vs `TreeMap` vs `Hashtable`:**
+  Order preservation, thread safety, and performance
+
+---
+
+### **13. Legacy Collections**
+
+* Includes `Vector`, `Stack`, `Hashtable`, `Enumeration`
+* Mostly synchronized and superseded by modern alternatives
+
+## 10. MultiThreading Basics
+
+1. **Processes vs. Threads**
+2. **Context Switching in Processes – Why It Is Required**
+3. **Context Switching in Threads – Why It Is Required**
+4. **Concurrency vs. Parallelism**
+5. **Does a Single-Core CPU Support Concurrency and Parallelism?**
+6. **Creating Threads in Java – Extending `Thread` vs. Implementing `Runnable`**
+7. **Thread States**
+8. **Thread Join**
+9. **Synchronization – Why It Is Required (With Example)**
+10. **Object Lock in the Context of Synchronization**
+11. **Synchronized Blocks vs. Synchronized Methods**
+12. **`volatile` and Atomic Variables**
+13. **Producer-Consumer Problem**
+14. **Even-Odd Number Printer Problem**
+15. **Thread Sleep**
 
 ## 11. Serialization
 
