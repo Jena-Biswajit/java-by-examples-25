@@ -13,5 +13,8 @@
         <module>constructor-example</module>
         <module>interfaces-example</module>
         <module>abstract-classes</module>
+        <module>design-pattern</module>
+        <module>inheritance-example</module>
+
     </modules>
 </project>
