@@ -1,16 +1,19 @@
 package com.example.superexample.models;
 
 public class Mercedies extends Car{
+
+    public Mercedies(){
+        super(4);
+    }
     public void carDetails(){
-//        System.out.println(super.gear);
-//        System.out.println(super.colour);
+
     }
 
     @Override
     public String toString() {
         return "Mercedies{" +
                 "gear=" + super.gear +
-//                "tyre"+ super.tyre +
+                ", tyres" + super.tyres+
                 ", colour='" + super.colour + '\'' +
                 '}';
     }

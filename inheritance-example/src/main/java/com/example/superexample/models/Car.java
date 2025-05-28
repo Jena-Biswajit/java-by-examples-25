@@ -7,9 +7,11 @@ public class Car {
 
     // we can't access private member since it has only class acess
     // even if
-    private int tyres = 4 ;
+//    private int tyres = 4 ;
+    public int tyres;
 
-    public Car(){
+    public Car(int tyres){
+        this.tyres = tyres;
         System.out.println("sports car");
     }
 }

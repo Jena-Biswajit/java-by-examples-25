@@ -6,6 +6,5 @@ public class App1 {
     public static void main(String[] args) {
         Mercedies mercedies = new Mercedies();
         System.out.println(mercedies);
-//        mercedies.carDetails();
     }
 }
