@@ -14,3 +14,13 @@
 - A remote control sends commands to devices
 - A restaurant waiter takes an order (command) to the chef (receiver)
 - Undo/redo in MS Word
+
+**Pros**
+- Encapsulates all details of a request in one object.
+- Supports undo/redo, logging, queueing, macro commands.
+- Follows open/closed principle — add new commands easily.
+
+**Cons**
+- More boilerplate code (lots of command classes).
+- Can be overkill if you're only triggering simple actions.
+- Commands can become difficult to manage if not well organized.

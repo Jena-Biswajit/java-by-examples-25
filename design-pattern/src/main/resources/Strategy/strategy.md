@@ -15,3 +15,13 @@
 - You can choose your payment method: Credit Card, UPI, PayPal.
 - Google Maps lets you choose your route: fastest, shortest, no toll.
 
+**Pros**
+- Promotes open/closed principle — new strategies without changing existing code.
+- Removes if-else/switch logic clutter.
+- Makes code easily extendable and testable.
+- Supports runtime switching of behaviors.
+
+**Cons**
+- More classes to manage (every strategy needs its own class).
+- Client must understand which strategy to use.
+- Can be overkill for very simple scenarios.

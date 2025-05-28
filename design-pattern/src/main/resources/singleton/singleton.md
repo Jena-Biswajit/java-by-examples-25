@@ -15,3 +15,15 @@
 - Your Operating System has only one task manager
 - A company has only one CEO
 
+**Pros**
+- Ensures only one instance exists (memory efficiency).
+- Provides global access point (like a global config or logger).
+- Useful for shared resources like DB connections or caches.
+
+**Cons**
+- Makes unit testing harder (tight coupling, global state).
+- Can become a god object (doing too many things).
+- Breaks Single Responsibility Principle.
+- Not thread-safe by default (unless handled carefully).
+
+
