@@ -3,6 +3,7 @@ package com.example.reuseparentmember.app;
 import com.example.reuseparentmember.models.Child;
 import com.example.reuseparentmember.models.Parent;
 
+//reuse parent members in child class
 public class App1 {
     public static void main(String[] args) {
 
@@ -28,10 +29,16 @@ public class App1 {
         System.out.println(parent.num1);
 
 
+        int parent1 = parent.getNum1(20);
+        int child1 = child.getNum1(20);
+
+        System.out.println("child getter:"+child1);
+        System.out.println("parent getter:"+parent1);
+
 
         // behaviour
-        child.bark();
-        child.eat();    // calling parent through child
+        child.childProperty();
+        child.parentPropety();    // calling parent through child
     }
 }
 /*

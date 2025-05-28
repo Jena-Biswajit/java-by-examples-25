@@ -12,6 +12,4 @@ public class Car {
     public Car(){
         System.out.println("sports car");
     }
-
-
 }
