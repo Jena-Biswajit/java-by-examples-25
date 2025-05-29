@@ -58,8 +58,12 @@
 1. Understanding exception hierarchy.
 2. Checked Exception and Unchecked Exception. Java provided exception classes
 3. What is Error. Java provided error types.
-4. Writing custom exception classes.
+4. Writing custom exception classes for checked and unchecked.
 5. Understanding exception stacktrace.
+6. Nested Try / Catch blocks
+7. Multi Level Try / Catch
+8. StackOverflow Error
+9. ClassNotFoundException vs NoClassDefError (v.imp)
 
 ## 8. Arrays
 1. Primitive type 1d array, 2d array, 3d array. And display them.

@@ -13,5 +13,7 @@
         <module>constructor-example</module>
         <module>interfaces-example</module>
         <module>abstract-classes</module>
+        <module>inheritance-example</module>
+        <module>exception-handling</module>
     </modules>
 </project>
