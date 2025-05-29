@@ -11,7 +11,7 @@ public class App1 {
         Vehicle vehicle2 = VehicleFactory.getVehicle("Truck");
         vehicle2.start();
 
-        Vehicle vehicle3 = VehicleFactory.getVehicle("Bike");
+        Vehicle vehicle3 = VehicleFactory.getVehicle("Abc");
         vehicle3.start();
     }
 }
