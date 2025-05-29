@@ -1,6 +1,6 @@
-package com.example.arithmaticexception.app;
+package com.example.exceptionexample.arithmaticexception.app;
 
-import com.example.arithmaticexception.models.Calculator;
+import com.example.exceptionexample.arithmaticexception.models.Calculator;
 
 public class App1 {
     public static void main(String[] args) {

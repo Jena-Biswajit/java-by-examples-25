@@ -1,4 +1,4 @@
-package com.example.arithmaticexception.models;
+package com.example.exceptionexample.arithmaticexception.models;
 
 public class Calculator {
     public void addtion(){

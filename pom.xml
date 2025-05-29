@@ -15,6 +15,7 @@
         <module>abstract-classes</module>
         <module>design-pattern</module>
         <module>inheritance-example</module>
+        <module>exception-handling-example</module>
 
     </modules>
 </project>
