@@ -1,4 +1,4 @@
-package com.example.onedarray.primitive.app;
+package com.example.onedarray.app;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
