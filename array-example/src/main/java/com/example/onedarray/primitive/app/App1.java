@@ -17,6 +17,8 @@ public class App1 {
         * The array is created with a fixed size of 3 and explicitly initialized with the values 1, 2, and 3.
         * Memory is allocated and filled with those values.
         * resulting array arr[0] = 1 , arr[1] = 2 ,arr[2] = 3
+        * Arrays.toString(arr) is designed for one-dimensional arrays . it will only print content for
+        * 1-d array content.
         * */
         int [] arr = {1,2,3};
         logger.info(Arrays.toString(arr));
