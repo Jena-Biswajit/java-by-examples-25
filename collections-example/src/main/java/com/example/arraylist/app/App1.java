@@ -29,6 +29,9 @@ public class App1 {
         list.set(2 , 20);
         logger.info(list.toString());
 
+        // check if present using contains
+        logger.info(String.valueOf(list.contains(1)));
+
         //delete only selected index use case
         list.remove(1);
         logger.info(list.toString());
@@ -37,8 +40,6 @@ public class App1 {
         //delete the list case
         list.clear();
         logger.info(list.toString());
-
-
 
 
         // abstract data type
