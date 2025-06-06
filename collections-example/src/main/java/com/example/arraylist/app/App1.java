@@ -29,6 +29,15 @@ public class App1 {
         list.set(2 , 20);
         logger.info(list.toString());
 
+        //delete only selected index use case
+        list.remove(1);
+        logger.info(list.toString());
+
+
+        //delete the list case
+        list.clear();
+        logger.info(list.toString());
+
 
 
 
@@ -46,6 +55,10 @@ public class App1 {
         // update use case
 
         employeesList.set(1 , new Employee(102,"sumit","bhubaneswar"));
+        logger.info(employeesList.toString());
+
+        // delete selected index
+        employeesList.remove(1);
         logger.info(employeesList.toString());
 
     }
