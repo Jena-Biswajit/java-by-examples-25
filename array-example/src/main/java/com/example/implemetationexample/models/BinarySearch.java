@@ -1,6 +1,6 @@
 package com.example.implemetationexample.models;
 
-public class BinarySearch1 {
+public class BinarySearch {
 
     public int searchTarget(int[] arr ,int target ){
 
