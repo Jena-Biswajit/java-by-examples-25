@@ -54,7 +54,6 @@ public class App1 {
         logger.info(String.valueOf(employeesList.get(1)));
 
         // update use case
-
         employeesList.set(1 , new Employee(102,"sumit","bhubaneswar"));
         logger.info(employeesList.toString());
 
