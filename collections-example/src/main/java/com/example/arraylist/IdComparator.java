@@ -1,4 +1,6 @@
-package com.example.arraylist.models;
+package com.example.arraylist;
+
+import com.example.arraylist.models.Student1;
 
 import java.util.Comparator;
 

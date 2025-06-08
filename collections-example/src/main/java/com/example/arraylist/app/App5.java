@@ -1,5 +1,8 @@
 package com.example.arraylist.app;
 
+import com.example.arraylist.DeptComparator;
+import com.example.arraylist.IdComparator;
+import com.example.arraylist.NameComparator;
 import com.example.arraylist.models.*;
 
 import java.util.*;
