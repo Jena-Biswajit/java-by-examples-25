@@ -1,6 +1,6 @@
 package com.example.arraylist.models;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     public int id ;
     public String name ;
     public String city ;
@@ -10,6 +10,13 @@ public class Employee {
         this.name = name ;
         this.city = city ;
     }
+
+
+    @Override
+    public int compareTo(Employee other){
+       return this.name.compareTo(other.name);
+    }
+
 
     @Override
     public String toString() {
