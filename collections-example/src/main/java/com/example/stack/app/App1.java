@@ -20,6 +20,8 @@ public class App1 {
             System.out.println(integerStack.pop());
         }
 
+        // check the stack after pop operation it will show empty stack
+        System.out.println(integerStack);
 
     }
 }
