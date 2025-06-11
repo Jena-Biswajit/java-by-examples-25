@@ -23,9 +23,15 @@ public class App3 {
         }
 
         System.out.println();
-        // using keySet()
+
+
+        // using keySet() . it will show ConcurrentModificationException modification
+        // because i'm trying to modify the code during rum without Iterator
         for (String key : iterateMap.keySet()){
             Integer value = iterateMap.get(key);
+            if(iterateMap.containsKey("sachin")){
+                iterateMap.put("rohit" , 4);
+            }
             System.out.println("key :"+ key + " value:"+ value);
         }
 

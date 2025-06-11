@@ -21,5 +21,7 @@ public class App4 {
             String value = entry.getValue();
             System.out.println("key :"+ key + " value:"+ value);
         }
+
+
     }
 }
