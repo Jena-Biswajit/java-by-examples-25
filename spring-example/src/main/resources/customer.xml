@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.example.customer.controller.CustomerController">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="customerService" ref="customerServiceBean"/>
+    </bean>
+
+    <bean id="customerServiceBean" class="com.example.customer.service.CustomerService">
+        <!-- collaborators and configuration for this bean go here -->
+        <!--        <property name="customerRepository" ref="customerRepositoryBean"/>-->
+        <constructor-arg index="0" ref="customerRepositoryBean"/>
+    </bean>
+
+    <bean id="customerRepositoryBean" class="com.example.customer.daos.CustomerRepository">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>    <!-- more bean definitions go here -->
+
+</beans>
