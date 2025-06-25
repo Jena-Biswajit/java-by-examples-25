@@ -29,7 +29,7 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
-    // put/update employee column by id
+    // put/update the entire resource of employee column by id
     @PutMapping("/employee/{id}")
     public Employee updateEmployee(@PathVariable Long id , @RequestBody Employee employeeDetails){
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
@@ -55,6 +55,29 @@ public class EmployeeController {
         }
         employeeRepository.deleteById(id);
         return "Employee deleted successfully with id: " + id;
+    }
+
+    // patch/update only specified fields of employee
+    @PatchMapping("/employee/{id}")
+    public Employee partiallyUpdateEmployee(@PathVariable Long id , @RequestBody Employee employeeDetails){
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+
+        if (!optionalEmployee.isPresent()){
+            throw new ResourceNotFoundException("employee not found with id"+ id);
+        }
+
+        Employee employee = optionalEmployee.get();
+
+        // check each field if non-null and update only if it's provided
+        if (employeeDetails.getFirstName() != null){
+            employee.setFirstName(employeeDetails.getFirstName());
+        } if (employeeDetails.getLastName() != null){
+            employee.setLastName(employeeDetails.getLastName());
+        } if (employeeDetails.getEmailId() != null){
+            employee.setEmailId(employeeDetails.getEmailId());
+        }
+
+        return employeeRepository.save(employee);
     }
 
 }
