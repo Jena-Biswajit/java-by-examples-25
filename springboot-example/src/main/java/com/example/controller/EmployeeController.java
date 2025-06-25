@@ -1,6 +1,7 @@
 package com.example.controller;
 
 
+import com.example.exception.ResourceNotFoundException;
 import com.example.models.Employee;
 import com.example.daos.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class EmployeeController {
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
 
         if (!optionalEmployee.isPresent()){
-            throw new RuntimeException("Employee not found with id: " + id);
+            throw new ResourceNotFoundException("Employee not found with id: " + id);
         }
         Employee employee = optionalEmployee.get();
         employee.setFirstName(employeeDetails.getFirstName());
@@ -42,6 +43,18 @@ public class EmployeeController {
         employee.setEmailId(employeeDetails.getEmailId());
 
         return employeeRepository.save(employee);
+    }
+
+    // delete employee column by id
+    @DeleteMapping("/employee/{id}")
+    public String deleteEmployee(@PathVariable Long id){
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+
+        if (!optionalEmployee.isPresent()){
+            throw new ResourceNotFoundException("Employee not found with id: " + id);
+        }
+        employeeRepository.deleteById(id);
+        return "Employee deleted successfully with id: " + id;
     }
 
 }
