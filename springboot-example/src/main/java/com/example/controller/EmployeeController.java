@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -24,6 +25,22 @@ public class EmployeeController {
     // post/create employees rest api
     @PostMapping("/employee")
     public Employee createEmployee(@RequestBody Employee employee){
+        return employeeRepository.save(employee);
+    }
+
+    // put/update employee column by id
+    @PutMapping("/employee/{id}")
+    public Employee updateEmployee(@PathVariable Long id , @RequestBody Employee employeeDetails){
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+
+        if (!optionalEmployee.isPresent()){
+            throw new RuntimeException("Employee not found with id: " + id);
+        }
+        Employee employee = optionalEmployee.get();
+        employee.setFirstName(employeeDetails.getFirstName());
+        employee.setLastName(employeeDetails.getLastName());
+        employee.setEmailId(employeeDetails.getEmailId());
+
         return employeeRepository.save(employee);
     }
 
