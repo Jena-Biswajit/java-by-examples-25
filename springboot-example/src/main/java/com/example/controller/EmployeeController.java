@@ -15,11 +15,17 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    // get all employees rest api
-
+    // get/retrieve all employees rest api
     @GetMapping("/employee")
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
     }
+
+    // post/create employees rest api
+    @PostMapping("/employee")
+    public Employee createEmployee(@RequestBody Employee employee){
+        return employeeRepository.save(employee);
+    }
+
 }
 
