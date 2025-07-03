@@ -17,13 +17,13 @@ public class AccountService {
         accountDao.addAccount("OuterUser", 5000);
         System.out.println("Outer transaction: Added OuterUser");
 
-        try {
-            innerTransaction();
-        } catch (Exception e) {
-            System.out.println("Inner transaction rolled back: " + e.getMessage());
-        }
-
-        throw new RuntimeException("Forcing rollback in outer transaction");
+//        try {
+//            innerTransaction();
+//        } catch (Exception e) {
+//            System.out.println("Inner transaction rolled back: " + e.getMessage());
+//        }
+//
+//        throw new RuntimeException("Forcing rollback in outer transaction");
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)

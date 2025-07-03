@@ -11,7 +11,7 @@ public class AccountDao {
     private JdbcTemplate jdbcTemplate;
 
     public void createTable() {
-        jdbcTemplate.execute("CREATE TABLE accounts (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), balance DECIMAL)");
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS accounts (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), balance DECIMAL)");
     }
 
     public void addAccount(String name, double balance) {
