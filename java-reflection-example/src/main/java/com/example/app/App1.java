@@ -11,6 +11,13 @@ public class App1 {
         // achieve the same using .class method
         Class object = Dog.class;
         System.out.println(object.getName());
+
+        // get details of superclass . here the object is referring to Dog object
+        // hence it will return the superclass of Dog class
+       Class superClass = object.getSuperclass();
+       System.out.println(superClass);
+
+
     }
 }
 class Animal{
