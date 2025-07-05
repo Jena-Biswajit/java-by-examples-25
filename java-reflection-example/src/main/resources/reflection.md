@@ -77,5 +77,45 @@ public class UtkalUniversity extends Institute {
 
 // 0/p : public
 ```
+### Implemented Interfaces
+- A class can implement many interfaces. Therefore an array of Class is returned. 
+- Interfaces are also represented by Class objects in Java Reflection.
 
+**Note**
+- Only the interfaces specifically declared implemented by a given class is returned
+-  If a superclass of the class implements an interface, but the class doesn't specifically state that it also implements that interface, that interface will not be returned in the array.
+- Even if the class in practice implements that interface, because the superclass does.
+
+**Example**
+```
+package com.example.app;
+
+import java.lang.reflect.Method;
+
+public class App4 {
+    public static void main(String[] args) {
+        PublicRight publicRight = new PublicRight();
+        Class implementedInterface = PublicRight.class;
+        Class[] interfaces = implementedInterface.getInterfaces();
+        for (Class interface1 : interfaces){
+            System.out.println(interface1.getName());
+        }
+
+    }
+}
+interface Vehicle{
+}
+interface Institution{
+}
+interface Constitution{
+}
+class PublicRight implements Vehicle,Institution,Constitution{
+
+}
+
+// o/p : 
+com.example.app.Vehicle
+com.example.app.Institution
+com.example.app.Constitution
+```
 
