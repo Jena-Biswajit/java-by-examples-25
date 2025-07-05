@@ -3,7 +3,7 @@ package com.example.app;
 
 // crete an object of class using getClass()
 public class App1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         Dog animal = new Dog();
 //        animal.display();
 //        animal.makeSound();
@@ -17,6 +17,11 @@ public class App1 {
        Class superClass = object.getSuperclass();
        System.out.println(superClass);
 
+       // class name using forName()
+       Cat cat = new Cat();
+       Class object1 = Class.forName("com.example.app.Cat");
+        System.out.println(object1);
+
 
     }
 }
@@ -28,5 +33,10 @@ class Animal{
 class Dog extends Animal{
     public void makeSound(){
         System.out.println("bark bark");
+    }
+}
+class Cat extends Animal{
+    public void skinColor(){
+        System.out.println("my skin color is black");
     }
 }
