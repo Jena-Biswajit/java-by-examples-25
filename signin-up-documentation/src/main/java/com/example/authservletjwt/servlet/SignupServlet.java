@@ -17,6 +17,36 @@ public class SignupServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         UserSignupDTO dto = gson.fromJson(request.getReader(), UserSignupDTO.class);
+
+        // Check Content-Type
+        if (!"application/json".equalsIgnoreCase(request.getContentType())) {
+            response.setStatus(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
+            response.getWriter().write("{\"error\": \"Content-Type must be application/json\"}");
+            return;
+        }
+
+        String email = dto.email.trim();
+        String password = dto.password.trim();
+
+        // basic email validation
+        if (email.isEmpty()) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{\"error\": \"Email cannot be empty\"}");
+            return;
+        }
+
+        if (password.isEmpty()) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{\"error\": \"Password cannot be empty\"}");
+            return;
+        }
+
+        if (!email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{\"error\": \"Invalid email format\"}");
+            return;
+        }
+
         try {
             userService.signup(dto.email, dto.password);
             response.setStatus(HttpServletResponse.SC_CREATED);
@@ -26,13 +56,5 @@ public class SignupServlet extends HttpServlet {
             response.getWriter().write("{\"error\": \"" + e.getMessage() + "\"}");
         }
     }
-
-//    static {
-//        System.out.println("SignupServlet loaded...");
-//    }
-//
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-//        System.out.println("SignupServlet doPost called...");
-//    }
 }
+
