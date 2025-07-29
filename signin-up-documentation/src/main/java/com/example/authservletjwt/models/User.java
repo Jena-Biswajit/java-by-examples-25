@@ -19,6 +19,9 @@ public class User {
         this.role = role;
     }
 
+    public User() {
+    }
+
     // getters and setters
     public int getId() { return id; }
     public String getEmail() { return email; }

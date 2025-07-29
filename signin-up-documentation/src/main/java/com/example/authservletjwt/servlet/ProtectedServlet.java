@@ -1,51 +1,41 @@
+
 package com.example.authservletjwt.servlet;
 
-import com.example.authservletjwt.util.JwtUtil;
+import com.example.authservletjwt.daos.UserDAO;
+import com.example.authservletjwt.service.AuthService;
+import com.example.authservletjwt.util.JsonResponseUtil;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet("/protected")
 public class ProtectedServlet extends HttpServlet {
 
+    private final AuthService authService;
+    public ProtectedServlet() {
+        this.authService = new AuthService(); // For production
+    }
+    public ProtectedServlet(AuthService authService) {
+        this.authService = authService; // For testing
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Allow CORS for Postman/browser testing
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setContentType("application/json");
-
-        String authHeader = request.getHeader("Authorization");
-
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("{\"error\": \"Missing or invalid Authorization header\"}");
-            return;
-        }
-
-        String token = authHeader.substring(7).trim();
-
-        if (token.isEmpty()) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("{\"error\": \"Authorization token is missing after Bearer\"}");
-            return;
-        }
-
+        Claims claims = null;
         try {
-            Claims claims = JwtUtil.validateToken(token);
-            String userId = claims.getSubject();
-            String email = claims.get("email", String.class);
-            String role = claims.get("role", String.class);
-
-            response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write("{\"message\": \"Protected resource accessed successfully\", " +
-                    "\"userId\": \"" + userId + "\", " +
-                    "\"email\": \"" + email + "\", " +
-                    "\"role\": \"" + role + "\"}");
-        } catch (Exception e) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("{\"error\": \"Invalid or expired token\"}");
+            claims = authService.validateAuthorizationHeader(request.getHeader("Authorization"));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
+        String userId = claims.getSubject();
+        String role = (String) claims.get("role");
+
+        JsonResponseUtil.writeResponse(response, 200,
+                "Protected resource accessed by userId: " + userId + " with role: " + role, null);
     }
 }
